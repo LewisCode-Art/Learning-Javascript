@@ -32,3 +32,60 @@ isMarried = false;
 
 // var lastName = prompt('What is his last name?');
 // console.log(firstName + ' ' + lastName);
+
+// Basic Operators
+var year, yearJohn, yearMark;
+var now = 2018;
+var ageJohn = 28;
+var ageMark = 33;
+
+// Math Operators
+var yearJohn = now - 28;
+var yearMark = now - 33;
+
+console.log(yearJohn);
+
+console.log(now + 2);
+console.log(now * 2);
+console.log(now / 10);
+
+// Logical Operators
+var johnOlder = ageJohn < ageMark;
+console.log(johnOlder);
+
+// typeof operator
+console.log(typeof johnOlder);
+console.log(typeof ageMark);
+console.log(typeof 'Mark is older than john');
+var x;
+console.log(x);
+
+// operator precedence
+var now = 2018;
+var yearJohn = 1989;
+var fullAge = 18;
+
+// Multiple Operators
+var isFullAge = now - yearJohn >= fullAge;
+console.log(isFullAge);
+
+// Grouping
+var ageJohn = now - yearJohn;
+var ageMark = 35;
+var average = (ageJohn + ageMark) / 2;
+console.log(average)
+
+// Multiple Assignments
+var x, y;
+x = y = (3 + 5) * 4 - 6;
+console.log(x, y);
+
+// More Operators
+x *= 2;
+console.log(x);
+x += 10;
+console.log(x);
+x++;
+console.log(x);
+x--;
+console.log(x);
