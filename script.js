@@ -137,7 +137,6 @@ var whatDoYouDo = function (job, firstName) {
         default:
             return firstName + ' does something else'
     }
-
 }
 
 console.log(whatDoYouDo('teacher', 'Larbo'));
@@ -147,6 +146,152 @@ console.log(whatDoYouDo('fisherman', 'Shuwa'));
 
 
 // Arrays********************
+// Initialize array
+var names = ['johnny', 'mark', 'jane'];
+var years = new Array(1990, 1993, 1995);
 
-var names =['john', 'mark','jane'];
-var years = new Array();
+console.log(names[0]);
+console.log(names);
+console.log('total items in array is ' + names.length);
+
+// mutate array data
+names[5] = 'Mary';
+names[1] = 'Ben';
+names[names.length] = 'Lewis'
+console.log(names);
+
+// different data types
+var john = ['John', 'Smith', 1990, 'teacher'];
+
+// push to add new item to end of array
+john.push('Anita');
+john.unshift('Mr.')
+console.log(john);
+
+// remove last item
+john.pop();
+console.log(john);
+
+// remove first item
+john.shift();
+console.log(john);
+
+console.log(john.indexOf(1990))
+
+var isDesigner = john.indexOf('designer') === -1 ? 'John is not a designer' : 'john is a designer';
+console.log(isDesigner);
+
+// coding challenge
+function tipCalculator(bill) {
+    if (bill < 50) {
+        var lessThan50 = 0.2 * bill;
+        return lessThan50;
+    } else if (bill >= 50 && bill < 200) {
+        var btwn50_200 = 0.15 * bill;
+        return btwn50_200;
+    } else {
+        var greaterThan200 = 0.1 * bill;
+        return greaterThan200;
+    }
+}
+
+var newArray = new Array();
+
+newArray.push(tipCalculator(124));
+newArray.push(tipCalculator(48));
+newArray.push(tipCalculator(268));
+console.log(newArray);
+
+function tipTotalCalculator(bill) {
+    if (bill < 50) {
+        var lessThan50 = (0.2 * bill) + bill;
+        return lessThan50;
+    } else if (bill >= 50 && bill < 200) {
+        var btwn50_200 = (0.15 * bill) + bill;
+        return btwn50_200;
+    } else {
+        var greaterThan200 = (0.1 * bill) + bill;
+        return greaterThan200;
+    }
+}
+var totalBill = new Array();
+totalBill.push(tipTotalCalculator(124));
+totalBill.push(tipTotalCalculator(48));
+totalBill.push(tipTotalCalculator(268));
+console.log(totalBill);
+
+// Objects and properties
+var john = {
+    firstName: 'john',
+    lastName: 'Doe',
+    birthYear: 1990,
+    family: ['jane', 'bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false
+};
+console.log(john);
+console.log(john['lastName']);
+
+john.job = 'designer';
+console.log(john);
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith';
+console.log(jane);
+
+
+// Object methods
+// ****************************
+var lewis = {
+    firstName: 'Lewis',
+    lastName: 'Doe',
+    birthYear: 1993,
+    family: ['jane', 'bob', 'Emily'],
+    job: 'teacher',
+    isMarried: false,
+    calcAge: function () {
+        this.age = 2021 - this.birthYear;
+    }
+};
+
+lewis.calcAge();
+console.log(lewis);
+
+
+// Coding challenge
+// *******************
+var marks = {
+    fullName: 'Mark smith',
+    mass: 230,
+    height: 12,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+
+var jonathan = {
+    fullName: 'Jonathan wesley',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+
+marks.calcBMI();
+jonathan.calcBMI();
+console.log(marks, jonathan);
+
+
+if (marks.bmi > jonathan.bmi) {
+    console.log(marks.fullName + ' has the highest BMI');
+} else if (jonathan.bmi > marks.bmi) {
+    console.log(jonathan.fullName + ' has the highest BMI');
+}else{
+    console.log('they have the same bmi');
+}
+
