@@ -291,7 +291,82 @@ if (marks.bmi > jonathan.bmi) {
     console.log(marks.fullName + ' has the highest BMI');
 } else if (jonathan.bmi > marks.bmi) {
     console.log(jonathan.fullName + ' has the highest BMI');
-}else{
+} else {
     console.log('they have the same bmi');
 }
 
+// Loops and Iteration
+// ********************************
+
+// for loop
+for (var i = 1; i <= 20; i += 2) {
+    console.log(i);
+}
+
+// var danty = ['Danty', 'Smith', 1990, 'teacher', false, 'blue'];
+
+// for (var i = 0; i < danty.length; i++) {
+//     console.log(danty[i]);
+// }
+
+
+// While loop
+// var i = 0;
+// while (i < danty.length) {
+//     console.log(danty[i]);
+//     i++;
+// }
+
+// continue and break
+var danty = ['Danty', 'Smith', 1990, 'teacher', false, 'blue'];
+
+for (var i = 0; i < danty.length; i++) {
+    if (typeof danty[i] !== 'string') {
+        continue;
+    }
+    console.log(danty[i]);
+}
+
+for (var i = 0; i < danty.length; i++) {
+    if (typeof danty[i] !== 'string') {
+        break;
+    }
+    console.log(danty[i]);
+}
+
+// reverse loop
+for (var i = danty.length - 1; i >= 0; i--) {
+    console.log(danty[i]);
+}
+
+// coding challenge
+var johnFamily = {
+    bills: [124, 48, 268, 180, 42],
+    tipArray: new Array(),
+    totalBill: new Array(),
+    calcTip: function () {
+        var amount;
+        var total;
+        for (var i = 0; i < this.bills.length; i++) {
+            if (this.bills[i] < 50) {
+                amount = this.bills[i] * 0.2;
+                total = this.bills[i] + amount;
+                this.tipArray.push(amount);
+                this.totalBill.push(total);
+            } else if (this.bills[i] > 50 && this.bills < 200) {
+                amount = this.bills[i] * 0.15;
+                total = this.bills[i] + amount;
+                this.tipArray.push(amount);
+                this.totalBill.push(total);
+            } else if (this.bills[i] > 100) {
+                amount = this.bills[i] * 0.1;
+                total = this.bills[i] + amount;
+                this.tipArray.push(amount);
+                this.totalBill.push(total);
+            }
+        }
+    }
+}
+johnFamily.calcTip();
+console.log(johnFamily.tipArray);
+console.log(johnFamily.totalBill);
